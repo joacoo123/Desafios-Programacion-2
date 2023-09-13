@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Meta
+  - Enemigo
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Jugador
+  - Plataformas
+  - Enemigos
+  - NoColision
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Fondo
+    uniqueID: 101299449
+    locked: 0
+  - name: Bloques
+    uniqueID: 434234495
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Frente
+    uniqueID: 3956346889
+    locked: 0
