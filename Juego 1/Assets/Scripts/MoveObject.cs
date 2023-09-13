@@ -12,10 +12,12 @@ public class MoveObject : MonoBehaviour
     [SerializeField] private bool Y;
 
     private Vector2 initialPosition;
+    private SpriteRenderer miSprite;
 
- 
+
     private void OnEnable()
     {
+        miSprite = GetComponent<SpriteRenderer>();
         initialPosition = transform.position;
     }
 
@@ -26,6 +28,7 @@ public class MoveObject : MonoBehaviour
             float pingPongValue = Mathf.PingPong(Time.time * velocidadMovimiento, distanciaMovimiento);
             Vector2 newPosition = initialPosition + Vector2.right * pingPongValue;
             transform.position = newPosition;
+      
         } 
         if(Y)
         {

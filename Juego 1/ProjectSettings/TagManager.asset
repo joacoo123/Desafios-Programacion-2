@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Meta
   - Enemigo
+  - Enemy
+  - Plataformas
+  - Piso
   layers:
   - Default
   - TransparentFX
@@ -17,8 +20,8 @@ TagManager:
   - Plataformas
   - Enemigos
   - NoColision
-  - 
-  - 
+  - Piso
+  - Bloque
   - 
   - 
   - 
@@ -42,6 +45,9 @@ TagManager:
   m_SortingLayers:
   - name: Fondo
     uniqueID: 101299449
+    locked: 0
+  - name: Decorado
+    uniqueID: 1773767247
     locked: 0
   - name: Bloques
     uniqueID: 434234495
