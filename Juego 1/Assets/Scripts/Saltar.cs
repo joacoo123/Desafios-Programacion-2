@@ -39,11 +39,11 @@ public class Saltar : MonoBehaviour
             axisHorizontal = Input.GetAxis("Horizontal");
             direccion = new Vector2(axisHorizontal, 0f);
             puedoSaltar = false;
-            if(miAudioSource.isPlaying) { return; }
+
+            if (miAudioSource.isPlaying) { return; }
             ultimaDireccion = Mathf.Sign(direccion.x);
             miAudioSource.PlayOneShot(ultimaDireccion == 1 ? jumpAud : jumpAud2);
-
-
+ 
 
         }
         int velocidadY = (int)miRigidbody2D.velocity.y;
@@ -54,7 +54,9 @@ public class Saltar : MonoBehaviour
     {
         if (!puedoSaltar && !saltando)
         {
-            miRigidbody2D.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
+        
+                miRigidbody2D.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
+           
             saltando = true;
         }
     }
@@ -66,6 +68,7 @@ public class Saltar : MonoBehaviour
         {
             puedoSaltar = true;
             saltando = false;
+           
             //if (miAudioSource.isPlaying) { return; }
             //miAudioSource.PlayOneShot(collisionAud);
         }

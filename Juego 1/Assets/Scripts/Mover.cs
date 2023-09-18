@@ -34,6 +34,7 @@ public class Mover : MonoBehaviour
     private void Update()
     {
         moverHorizontal = Input.GetAxis("Horizontal");
+
         direccion = new Vector2(moverHorizontal, 0f);
 
 
@@ -54,6 +55,7 @@ public class Mover : MonoBehaviour
     private void FixedUpdate()
     {
         miRigidbody2D.AddForce(direccion * velocidad);
+
     }
 
     private bool EnContactoConPlataforma()
