@@ -50,7 +50,7 @@ public class Mover : MonoBehaviour
         miSprite.flipX = ultimaDireccion == -1;
         int velocidadX = (int)miRigidbody2D.velocity.x;
         miAnimator.SetInteger("VelocidadX", velocidadX);
-        miAnimator.SetBool("EnAire",miRigidbody2D.velocity.y != 0f);
+        miAnimator.SetBool("EnAire", !EnContactoConPlataforma());
     }
     private void FixedUpdate()
     {
