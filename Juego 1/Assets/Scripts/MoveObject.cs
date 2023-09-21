@@ -28,6 +28,7 @@ public class MoveObject : MonoBehaviour
             float pingPongValue = Mathf.PingPong(Time.time * velocidadMovimiento, distanciaMovimiento);
             Vector2 newPosition = initialPosition + Vector2.right * pingPongValue;
             transform.position = newPosition;
+
       
         } 
         if(Y)

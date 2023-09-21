@@ -6,7 +6,15 @@ public class Jugador : MonoBehaviour
 {
     [Header("Configuracion")]
     [SerializeField] private float vida = 5f;
+    private Rigidbody2D miRigidBody2D;
+    private Vector2 initialPosition;
 
+    private void OnEnable()
+    {
+        miRigidBody2D = GetComponent<Rigidbody2D>();
+        initialPosition = transform.position;
+        
+    }
     public void  ModificarVida(float puntos)
     {
         if (vida != 0)
@@ -20,10 +28,14 @@ public class Jugador : MonoBehaviour
         if (!collision.gameObject.CompareTag("Meta")) { return; }
         Debug.Log("GANASTE");
     }
-    private void Perder(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (!collision.gameObject.CompareTag("Enemigo")) { return;  }
+        if(vida<=0) { 
+        transform.position = initialPosition;
         Debug.Log("Perdiste");
+            vida += 50;
+        }
     }
 
 
