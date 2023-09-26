@@ -30,7 +30,7 @@ public class Jugador : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!collision.gameObject.CompareTag("Enemigo")) { return;  }
+        if ((!collision.gameObject.CompareTag("Enemigo"))&&(!collision.gameObject.CompareTag("Proyectil"))) { return;  }
         if(vida<=0) { 
         transform.position = initialPosition;
         Debug.Log("Perdiste");
