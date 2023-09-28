@@ -11,13 +11,18 @@ public class MoveObject : MonoBehaviour
     [SerializeField] private bool X;
     [SerializeField] private bool Y;
 
+    //[Header("Otras Caracteristicas")]
+    //[SerializeField] private bool estadoModificado;
+    //[SerializeField] private float velocidadModificada;
+
     private Vector2 initialPosition;
     private SpriteRenderer miSprite;
-
+    //private EnemyState enemyState;
 
     private void OnEnable()
     {
         miSprite = GetComponent<SpriteRenderer>();
+        //enemyState = GetComponent<EnemyState>();
         initialPosition = transform.position;
     }
 
@@ -25,6 +30,13 @@ public class MoveObject : MonoBehaviour
     {
         if (X)
         {
+            //if (enemyState.isAngry && estadoModificado)
+            //{
+            //    velocidadMovimiento = velocidadModificada;
+            //} else
+            //{
+            //    velocidadMovimiento = 2f;
+            //}
             float pingPongValue = Mathf.PingPong(Time.time * velocidadMovimiento, distanciaMovimiento);
             Vector2 newPosition = initialPosition + Vector2.right * pingPongValue;
             transform.position = newPosition;
@@ -33,6 +45,14 @@ public class MoveObject : MonoBehaviour
         } 
         if(Y)
         {
+            //if (enemyState.isAngry && estadoModificado)
+            //{
+            //    velocidadMovimiento = velocidadModificada;
+            //}
+            //else
+            //{
+            //    velocidadMovimiento = 2f;
+            //}
             float pingPongValue = Mathf.PingPong(Time.time * velocidadMovimiento, distanciaMovimiento);
             Vector2 newPosition = initialPosition + Vector2.up * pingPongValue;
             transform.position = newPosition;
