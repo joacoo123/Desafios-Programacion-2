@@ -15,14 +15,16 @@ public class Herir : MonoBehaviour
         enemyState = GetComponent<EnemyState>();
     }
 
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             if (isEnemy)
             {
-                if (enemyState.isAngry == true)
+                if (enemyState.isAngry)
                 {
+                   
                     puntos = 10;
                 }
                 else

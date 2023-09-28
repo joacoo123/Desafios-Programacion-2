@@ -19,7 +19,7 @@ public class GeneradorObjetoLoop : MonoBehaviour
     void Start()
     {
      
-            InvokeRepeating(nameof(GenerarObjetoLoop), tiempoEspera, tiempoIntervalo);
+           
         
     }
 

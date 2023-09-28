@@ -49,6 +49,9 @@ TagManager:
   - name: Fondo
     uniqueID: 101299449
     locked: 0
+  - name: Varios
+    uniqueID: 464732585
+    locked: 0
   - name: Limites
     uniqueID: 895613917
     locked: 0
