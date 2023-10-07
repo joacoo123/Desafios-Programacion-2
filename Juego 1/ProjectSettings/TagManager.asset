@@ -12,6 +12,7 @@ TagManager:
   - LimiteIzq
   - LimiteDer
   - Proyectil
+  - Coleccionable
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - Piso
   - Bloque
   - Proyectil
-  - 
+  - coleccionable
   - 
   - 
   - 
