@@ -30,7 +30,7 @@ public class MoveObject : MonoBehaviour
 
     private void Update()
     {
-        if (X)
+        if (X||Y)
         {
             if (isEnemy)
             {
@@ -44,27 +44,9 @@ public class MoveObject : MonoBehaviour
                 }
             }
             float pingPongValue = Mathf.PingPong(Time.time * velocidadMovimiento, distanciaMovimiento);
-            Vector2 newPosition = initialPosition + Vector2.right * pingPongValue;
+            Vector2 direction = X ? Vector2.right : Vector2.up;
+            Vector2 newPosition = initialPosition + direction * pingPongValue;
             transform.position = newPosition;
-
-      
-        } 
-        if(Y)
-        {
-            if (isEnemy)
-            {
-                if (enemyState.isAngry && estadoModificado)
-                {
-                    velocidadMovimiento = velocidadModificada;
-                }
-                else
-                {
-                    velocidadMovimiento = 2f;
-                }
-            }
-            float pingPongValue = Mathf.PingPong(Time.time * velocidadMovimiento, distanciaMovimiento);
-            Vector2 newPosition = initialPosition + Vector2.up * pingPongValue;
-            transform.position = newPosition;
-        }
+        }  
     }
 }

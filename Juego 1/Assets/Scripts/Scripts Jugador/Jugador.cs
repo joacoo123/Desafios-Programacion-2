@@ -8,11 +8,13 @@ public class Jugador : MonoBehaviour
     [SerializeField] private float vida = 5f;
     private Rigidbody2D miRigidBody2D;
     private Vector2 initialPosition;
+    private int coleccionable;
 
     private void OnEnable()
     {
         miRigidBody2D = GetComponent<Rigidbody2D>();
         initialPosition = transform.position;
+        coleccionable = 0;
         
     }
     public void  ModificarVida(float puntos)
@@ -25,8 +27,19 @@ public class Jugador : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.gameObject.CompareTag("Meta")) { return; }
-        Debug.Log("GANASTE");
+        if (collision.gameObject.CompareTag("Coleccionable")) {
+            coleccionable += 1;
+            Debug.Log("Coleccionables: " + coleccionable);
+        }
+     
+      
+       
+
+    
+        if (!collision.gameObject.CompareTag("Meta")||(coleccionable != 3)) { return; }
+       
+                Debug.Log("GANASTE");
+            
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
