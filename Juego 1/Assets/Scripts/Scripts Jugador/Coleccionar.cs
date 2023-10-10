@@ -7,7 +7,7 @@ public class Coleccionar : MonoBehaviour
     [SerializeField] private List<GameObject> colleccionables;
     [SerializeField] GameObject bolsa;
 
-    private bool presionado = false;
+    //private bool presionado = false;
    
     private void Awake()
     {
@@ -24,13 +24,13 @@ public class Coleccionar : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            if (colleccionables.Count == 0) return;
-            presionado =!presionado;
-            colleccionables[0].SetActive(presionado);
-        }
-    }
+    //void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.P))
+    //    {
+    //        if (colleccionables.Count == 0) return;
+    //        presionado =!presionado;
+    //        colleccionables[0].SetActive(presionado);
+    //    }
+    //}
 }
