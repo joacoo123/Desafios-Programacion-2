@@ -6,12 +6,15 @@ public class Coleccionar : MonoBehaviour
 {
     [SerializeField] private List<GameObject> colleccionables;
     [SerializeField] GameObject bolsa;
+    
 
+    private PlayerProgression progression;
     //private bool presionado = false;
    
     private void Awake()
     {
         colleccionables = new List<GameObject>();
+        progression = GetComponent<PlayerProgression>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,6 +24,10 @@ public class Coleccionar : MonoBehaviour
         newColleccionable.SetActive(false);
         colleccionables.Add(newColleccionable);
         newColleccionable.transform.SetParent(bolsa.transform);
+        
+        progression.GainExperience(20);
+
+
     }
 
     // Update is called once per frame
