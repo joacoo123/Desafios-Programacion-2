@@ -5,9 +5,9 @@ using UnityEngine;
 public class Mover : MonoBehaviour
 {
     // Variables a configurar desde el editor
-    [Header("Configuracion")]
-    [SerializeField] float velocidad = 5f;
 
+    [SerializeField]private PerfilJugador perfilJugador;
+    public PerfilJugador PerfilJugador { get => perfilJugador; }
     // Variables de uso interno en el script
     private float moverHorizontal;
     private Vector2 direccion;
@@ -54,7 +54,7 @@ public class Mover : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        miRigidbody2D.AddForce(direccion * velocidad);
+        miRigidbody2D.AddForce(direccion * perfilJugador.velocidad);
 
     }
 

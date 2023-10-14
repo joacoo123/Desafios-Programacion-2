@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Jugador : MonoBehaviour
 {
-    [Header("Configuracion")]
-    [SerializeField] private float vida = 5f;
+    [SerializeField] private PerfilJugador perfilJugador;
+    public PerfilJugador PerfilJugador { get => perfilJugador; }
     private Rigidbody2D miRigidBody2D;
     private Vector2 initialPosition;
     private int coleccionable;
@@ -19,10 +19,10 @@ public class Jugador : MonoBehaviour
     }
     public void  ModificarVida(float puntos)
     {
-        if (vida != 0)
+        if (perfilJugador.vida != 0)
         {
-            vida += puntos;
-            Debug.Log(" VIDA RESTANTE:  " + vida);
+            perfilJugador.vida += puntos;
+            Debug.Log(" VIDA RESTANTE:  " + perfilJugador.vida);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -44,10 +44,10 @@ public class Jugador : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if ((!collision.gameObject.CompareTag("Enemigo"))&&(!collision.gameObject.CompareTag("Proyectil"))) { return;  }
-        if(vida<=0) { 
+        if(perfilJugador.vida<=0) { 
         transform.position = initialPosition;
         Debug.Log("Perdiste");
-            vida += 50;
+            perfilJugador.vida += 50;
         }
     }
 

@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d263e81bd19ebda4c88a43a215197430, type: 3}
   m_Name: NuevoPerfilJugador
   m_EditorClassIdentifier: 
-  CurrentLevel: 0
   CurrentExperience: 0
-  ExperienceToNextLevel: 20
+  ExperienceToNextLevel: 40
+  FuerzaSalto: 2.6
+  VelocidadDeMovimiento: 5
+  Vida: 50
+  SonidoSalto: 1
+  JumpAud: {fileID: 8300000, guid: 39214fb5fb68cf549b43406f978c32e2, type: 3}
+  JumpAud2: {fileID: 8300000, guid: c74b61e60a1096d49850b60ac1f762aa, type: 3}
+  SonidoColision: 0
+  CollisionAud: {fileID: 8300000, guid: ae52841d323167c4a9ffe6dc6121aa0b, type: 3}
