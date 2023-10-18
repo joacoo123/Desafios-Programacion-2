@@ -13,6 +13,7 @@ TagManager:
   - LimiteDer
   - Proyectil
   - Coleccionable
+  - Palancas
   layers:
   - Default
   - TransparentFX

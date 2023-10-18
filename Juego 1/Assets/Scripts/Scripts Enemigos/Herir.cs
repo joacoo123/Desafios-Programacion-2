@@ -6,7 +6,7 @@ public class Herir : MonoBehaviour
 {
     // Variables a configurar desde el editor
     [Header("Configuracion")]
-    [SerializeField] float puntos = 5f;
+    [SerializeField] int puntos = 1;
     [SerializeField] bool isEnemy;
     private EnemyState enemyState;
 
@@ -25,11 +25,11 @@ public class Herir : MonoBehaviour
                 if (enemyState.isAngry)
                 {
                    
-                    puntos = 10;
+                    puntos = 2;
                 }
                 else
                 {
-                    puntos = 5;
+                    puntos = 1;
                 }
             }
             

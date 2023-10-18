@@ -15,7 +15,7 @@ public class PerfilJugador : ScriptableObject
     public int currentExperience { get => CurrentExperience; set => CurrentExperience = value; }
 
     [SerializeField]
-    private int ExperienceToNextLevel;
+    private int ExperienceToNextLevel = 20;
     public int experienceToNextLevel { get => ExperienceToNextLevel; set => ExperienceToNextLevel = value; }
 
 
@@ -30,8 +30,8 @@ public class PerfilJugador : ScriptableObject
 
     [Header("Configuracion de atributos")]
     [SerializeField]
-    private float Vida = 5f;
-    public float vida { get => Vida; set => Vida = value; }
+    private int Vida = 5;
+    public int vida { get => Vida; set => Vida = value; }
 
     [Header("Configuracion de SFX")]
     [SerializeField] 

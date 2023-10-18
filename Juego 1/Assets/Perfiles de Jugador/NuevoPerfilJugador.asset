@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d263e81bd19ebda4c88a43a215197430, type: 3}
   m_Name: NuevoPerfilJugador
   m_EditorClassIdentifier: 
-  CurrentExperience: 0
-  ExperienceToNextLevel: 40
+  CurrentExperience: 60
+  ExperienceToNextLevel: 80
   FuerzaSalto: 2.6
   VelocidadDeMovimiento: 5
-  Vida: 50
+  Vida: 5
   SonidoSalto: 1
   JumpAud: {fileID: 8300000, guid: 39214fb5fb68cf549b43406f978c32e2, type: 3}
   JumpAud2: {fileID: 8300000, guid: c74b61e60a1096d49850b60ac1f762aa, type: 3}
