@@ -57,6 +57,9 @@ TagManager:
   - name: Limites
     uniqueID: 895613917
     locked: 0
+  - name: Proyectil
+    uniqueID: 3354166623
+    locked: 0
   - name: Bloques
     uniqueID: 434234495
     locked: 0

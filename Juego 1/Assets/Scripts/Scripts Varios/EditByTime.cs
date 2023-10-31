@@ -14,13 +14,13 @@ public class EditByTime : MonoBehaviour
     private Color actualColor;
     
     private SpriteRenderer miSpriteRenderer;
-    private Tilemap miTileMap;
+    //private Tilemap miTileMap;
     private float tiempoTranscurrido;
     // Start is called before the first frame update
     void OnEnable()
     {
         miSpriteRenderer = GetComponent<SpriteRenderer>();
-        miTileMap = GetComponent<Tilemap>();
+        //miTileMap = GetComponent<Tilemap>();
        
     }
 
@@ -31,10 +31,10 @@ public class EditByTime : MonoBehaviour
         {
             actualColor = miSpriteRenderer.color;
         }
-        else if (miTileMap != null)
-        {
-            actualColor = miTileMap.color;
-        }
+        //else if (miTileMap != null)
+        //{
+        //    actualColor = miTileMap.color;
+        //}
     }
 
     // Update is called once per frame
@@ -54,15 +54,15 @@ public class EditByTime : MonoBehaviour
                     tiempoTranscurrido = 0f;
                 }
             }
-            else if (miTileMap != null)
-            {
-                miTileMap.color = asignarColor;
-                if (tiempoTranscurrido >= duracionActualColor + duracionColorAsignado)
-                {
-                    miTileMap.color = actualColor;
-                    tiempoTranscurrido = 0f;
-                }
-            }
+            //else if (miTileMap != null)
+            //{
+            //    miTileMap.color = asignarColor;
+            //    if (tiempoTranscurrido >= duracionActualColor + duracionColorAsignado)
+            //    {
+            //        miTileMap.color = actualColor;
+            //        tiempoTranscurrido = 0f;
+            //    }
+            //}
         }
     }
 }

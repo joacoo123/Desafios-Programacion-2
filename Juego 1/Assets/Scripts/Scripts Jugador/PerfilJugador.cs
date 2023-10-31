@@ -15,7 +15,7 @@ public class PerfilJugador : ScriptableObject
     public int currentExperience { get => CurrentExperience; set => CurrentExperience = value; }
 
     [SerializeField]
-    private int ExperienceToNextLevel = 20;
+    private int ExperienceToNextLevel;
     public int experienceToNextLevel { get => ExperienceToNextLevel; set => ExperienceToNextLevel = value; }
 
 

@@ -18,8 +18,9 @@ public class Herir : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player")|| collision.gameObject.CompareTag("Plataformas"))
         {
+          
             if (isEnemy)
             {
                 if (enemyState.isAngry)
@@ -34,8 +35,16 @@ public class Herir : MonoBehaviour
             }
             
             Jugador jugador = collision.gameObject.GetComponent<Jugador>();
-            jugador.ModificarVida(-puntos);
-            Debug.Log(" PUNTOS DE DAÑO REALIZADOS AL JUGADOR " + puntos);
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                jugador.ModificarVida(-puntos);
+                Debug.Log(" PUNTOS DE DAÑO REALIZADOS AL JUGADOR " + puntos);
+            }
+            if (!isEnemy)
+            {
+                gameObject.SetActive(false);
+            }
+            
         }
     }
 }
