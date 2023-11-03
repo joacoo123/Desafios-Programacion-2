@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class Saltar : MonoBehaviour
 {
-    [SerializeField] private PerfilJugador perfilJugador;
-    public PerfilJugador PerfilJugador { get => perfilJugador; }
+
     // Variables a configurar desde el editor
     [Header("Configuracion")]
- 
+    private Jugador misDatos;
 
 
     // Variables de uso interno en el script
@@ -28,7 +27,9 @@ public class Saltar : MonoBehaviour
         miRigidbody2D = GetComponent<Rigidbody2D>();
         miAnimator = GetComponent<Animator>();
         miAudioSource = GetComponent<AudioSource>();
-        perfilJugador.sonidoSalto = true;
+        misDatos = GetComponent<Jugador>();
+     
+        
     }
 
     // Codigo ejecutado en cada frame del juego (Intervalo variable)
@@ -39,11 +40,11 @@ public class Saltar : MonoBehaviour
             axisHorizontal = Input.GetAxis("Horizontal");
             direccion = new Vector2(axisHorizontal, 0f);
             puedoSaltar = false;
-            if (perfilJugador.sonidoSalto)
+            if (misDatos.perfilJugador.sonidoSalto)
             {
                 if (miAudioSource.isPlaying) { return; }
                 ultimaDireccion = Mathf.Sign(direccion.x);
-                miAudioSource.PlayOneShot(ultimaDireccion == 1 ? perfilJugador.jumpAud : perfilJugador.jumpAud2);
+                miAudioSource.PlayOneShot(ultimaDireccion == 1 ? misDatos.perfilJugador.jumpAud : misDatos.perfilJugador.jumpAud2);
             }
            
  
@@ -58,7 +59,7 @@ public class Saltar : MonoBehaviour
         if (!puedoSaltar && !saltando)
         {
         
-                miRigidbody2D.AddForce(Vector2.up * perfilJugador.fuerzaSalto, ForceMode2D.Impulse);
+                miRigidbody2D.AddForce(Vector2.up * misDatos.perfilJugador.fuerzaSalto, ForceMode2D.Impulse);
            
             saltando = true;
         }
@@ -71,10 +72,10 @@ public class Saltar : MonoBehaviour
         {
             puedoSaltar = true;
             saltando = false;
-            if (perfilJugador.sonidoColision)
+            if (misDatos.perfilJugador.sonidoColision)
             {
                 if (miAudioSource.isPlaying) { return; }
-                miAudioSource.PlayOneShot(perfilJugador.collisionAud);
+                miAudioSource.PlayOneShot(misDatos.perfilJugador.collisionAud);
             }
            
         }

@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Jugador : MonoBehaviour
 {
-    [SerializeField] private PerfilJugador perfilJugador;
+    [SerializeField] public PerfilJugador perfilJugador;
     public PerfilJugador PerfilJugador { get => perfilJugador; }
 
     private Rigidbody2D miRigidBody2D;
