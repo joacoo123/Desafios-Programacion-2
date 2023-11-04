@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
-    [SerializeField] private PerfilJugador perfilJugador;
-    public PerfilJugador PerfilJugador { get => perfilJugador; }
+
+    private Jugador misDatos;
 
     private float moverHorizontal;
     private Vector2 direccion;
@@ -17,9 +17,10 @@ public class Mover : MonoBehaviour
 
     private void OnEnable()
     {
-        miRigidbody2D = GetComponent <Rigidbody2D>();
+        miRigidbody2D = GetComponent<Rigidbody2D>();
         controladorAnimacion = GetComponent<ControladorAnimacion>(); // Obtener referencia al ControladorAnimacion
         deteccionContacto = GetComponent<DeteccionContacto>(); // Obtener referencia al DeteccionContacto
+        misDatos = GetComponent<Jugador>();
     }
 
     private void Update()
@@ -32,6 +33,6 @@ public class Mover : MonoBehaviour
 
     private void FixedUpdate()
     {
-        miRigidbody2D.AddForce(direccion * perfilJugador.velocidad);
+        miRigidbody2D.AddForce(direccion * misDatos.perfilJugador.velocidad);
     }
 }

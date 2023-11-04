@@ -6,16 +6,16 @@ using UnityEngine;
 
 public class PerfilJugador : ScriptableObject
 {
-  
-    private int CurrentLevel;
+    [SerializeField]
+    private int CurrentLevel = 0;
     public int currentLevel { get => CurrentLevel; set => CurrentLevel = value; }
     [Header("Configuracion nivel")]
     [SerializeField]
-    private int CurrentExperience;
+    private int CurrentExperience = 0;
     public int currentExperience { get => CurrentExperience; set => CurrentExperience = value; }
 
     [SerializeField]
-    private int ExperienceToNextLevel;
+    private int ExperienceToNextLevel = 20;
     public int experienceToNextLevel { get => ExperienceToNextLevel; set => ExperienceToNextLevel = value; }
 
 
@@ -46,11 +46,4 @@ public class PerfilJugador : ScriptableObject
     private AudioClip JumpAud2;
     public AudioClip jumpAud2 { get => JumpAud2; set => JumpAud2 = value; }
   
-    [SerializeField] 
-    private bool SonidoColision;
-    public bool sonidoColision { get => SonidoColision; set => SonidoColision = value;}
-  
-    [SerializeField] 
-    private AudioClip CollisionAud;
-    public AudioClip collisionAud { get => CollisionAud; set => CollisionAud = value; }
 }

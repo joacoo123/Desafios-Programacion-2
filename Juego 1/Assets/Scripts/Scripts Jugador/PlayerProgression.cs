@@ -2,14 +2,19 @@ using UnityEngine;
 
 public class PlayerProgression : MonoBehaviour
 {
-    [SerializeField] private PerfilJugador perfilJugador;
-    public PerfilJugador PerfilJugador { get => perfilJugador; }
+
+    private Jugador misDatos;
+
+    private void OnEnable()
+    {
+        misDatos = GetComponent<Jugador>();
+    }
 
     public void GainExperience(int experience)
     {
-        perfilJugador.currentExperience += experience;
+        misDatos.perfilJugador.currentExperience += experience;
 
-        if (perfilJugador.currentExperience >= perfilJugador.experienceToNextLevel)
+        if (misDatos.perfilJugador.currentExperience >= misDatos.perfilJugador.experienceToNextLevel)
         {
             LevelUp();
         }
@@ -17,9 +22,9 @@ public class PlayerProgression : MonoBehaviour
 
     private void LevelUp()
     {
-        perfilJugador.currentLevel++;
-        perfilJugador.currentExperience -= perfilJugador.experienceToNextLevel;
-        perfilJugador.experienceToNextLevel += 20; // Aumenta la experiencia necesaria para el siguiente nivel
+        misDatos.perfilJugador.currentLevel++;
+        misDatos.perfilJugador.currentExperience -= misDatos.perfilJugador.experienceToNextLevel;
+        misDatos.perfilJugador.experienceToNextLevel += 20; // Aumenta la experiencia necesaria para el siguiente nivel
 
        
     }
