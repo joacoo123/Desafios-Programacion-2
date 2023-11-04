@@ -20,6 +20,9 @@ public class Saltar : MonoBehaviour
     private Rigidbody2D miRigidbody2D;
     private Animator miAnimator;
     private AudioSource miAudioSource;
+
+    private ControladorAnimacion controladorAnimacion;
+    private DeteccionContacto deteccionContacto;
     
     // Codigo ejecutado cuando el objeto se activa en el nivel
     private void OnEnable()
@@ -28,7 +31,8 @@ public class Saltar : MonoBehaviour
         miAnimator = GetComponent<Animator>();
         miAudioSource = GetComponent<AudioSource>();
         misDatos = GetComponent<Jugador>();
-     
+        controladorAnimacion = GetComponent<ControladorAnimacion>();
+        deteccionContacto = GetComponent<DeteccionContacto>();
         
     }
 
@@ -50,8 +54,7 @@ public class Saltar : MonoBehaviour
  
 
         }
-        int velocidadY = (int)miRigidbody2D.velocity.y;
-        miAnimator.SetInteger("VelocidadY", velocidadY);
+       
     }
 
     private void FixedUpdate()

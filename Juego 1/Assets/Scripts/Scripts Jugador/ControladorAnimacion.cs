@@ -17,9 +17,10 @@ public class ControladorAnimacion : MonoBehaviour
         miSprite = GetComponent <SpriteRenderer>();
     }
 
-    public void ActualizarAnimacion(int velocidadX, bool enAire)
+    public void ActualizarAnimacion(int velocidadX,int velocidadY,  bool enAire)
     {
         miAnimator.SetInteger("VelocidadX", velocidadX);
+        miAnimator.SetInteger("VelocidadY", velocidadY);
         miAnimator.SetBool("EnAire", enAire);
         //Logica para voltear sprite
         getAxis = Input.GetAxis("Horizontal");

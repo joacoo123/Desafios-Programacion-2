@@ -27,7 +27,7 @@ public class Mover : MonoBehaviour
         moverHorizontal = Input.GetAxis("Horizontal");
         direccion = new Vector2(moverHorizontal, 0f);
 
-        controladorAnimacion.ActualizarAnimacion((int)miRigidbody2D.velocity.x, !deteccionContacto.EnContactoConPlataforma());
+        controladorAnimacion.ActualizarAnimacion((int)miRigidbody2D.velocity.x, (int)miRigidbody2D.velocity.y, !deteccionContacto.EnContactoConPlataforma());
     }
 
     private void FixedUpdate()
