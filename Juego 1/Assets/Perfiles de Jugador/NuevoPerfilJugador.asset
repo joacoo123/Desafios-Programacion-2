@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentLevel: 0
   CurrentExperience: 0
-  ExperienceToNextLevel: 40
+  ExperienceToNextLevel: 20
   FuerzaSalto: 2.6
   VelocidadDeMovimiento: 5
-  Vida: 4
+  Vida: 5
   SonidoSalto: 1
   JumpAud: {fileID: 8300000, guid: 39214fb5fb68cf549b43406f978c32e2, type: 3}
   JumpAud2: {fileID: 8300000, guid: c74b61e60a1096d49850b60ac1f762aa, type: 3}

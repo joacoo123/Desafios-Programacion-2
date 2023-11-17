@@ -19,7 +19,7 @@ public class ControladorSonido : MonoBehaviour
     {
         if (misDatos.perfilJugador.sonidoSalto)
         {
-            if (miAudioSource.isPlaying) { return; }
+            //if (miAudioSource.isPlaying) { return; }
             miAudioSource.PlayOneShot(ultimaDireccion == 1 ? misDatos.perfilJugador.jumpAud : misDatos.perfilJugador.jumpAud2);
         }
     }

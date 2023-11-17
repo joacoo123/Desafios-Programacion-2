@@ -12,13 +12,13 @@ public class HUDController : MonoBehaviour
 
     public void ActualizarTextoHUD(string nuevoTexto)
     {
-        Debug.Log("SE LLAMA " + nuevoTexto);
-        miTexto.text = nuevoTexto;
+        
+        miTexto.text = "Nivel "+nuevoTexto;
     }
 
     public void ActualizarVidasHUD(int vidas)
     {
-        Debug.Log("ESTAS ACTUALIZANDO VIDAS");
+        //Debug.Log("ESTAS ACTUALIZANDO VIDAS");
         if (EstaVacioContenedor())
         {
             CargarContenedor(vidas);
