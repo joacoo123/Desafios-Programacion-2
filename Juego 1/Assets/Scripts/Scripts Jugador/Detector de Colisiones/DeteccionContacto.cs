@@ -10,7 +10,7 @@ public class DeteccionContacto : MonoBehaviour
     private void Start()
     {
         miCollider2d = GetComponent<BoxCollider2D>();
-        saltarMask = LayerMask.GetMask("Piso", "Plataformas");
+        saltarMask = LayerMask.GetMask("Piso", "Plataformas","PlataformaMovil");
     }
 
     public bool EnContactoConPlataforma()
