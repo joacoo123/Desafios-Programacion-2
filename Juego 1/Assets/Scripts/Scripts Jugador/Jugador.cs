@@ -15,6 +15,7 @@ public class Jugador : MonoBehaviour
     private int coleccionable;
     private bool reinicio;
     private bool ganar;
+    private float totalElapsedTime;
     private float elapsedTime;
 
     //Eventos---------------
@@ -47,21 +48,25 @@ public class Jugador : MonoBehaviour
         elapsedTime = 0;
         ganar = false;
         reinicio = false;
-        OnTextChanged.Invoke(perfilJugador.currentLevel.ToString());
+        OnTextChanged.Invoke("Nivel " + perfilJugador.currentLevel.ToString());
+        GameManager.Instance.tiempoRecord = 0.0f;
     }
     void Update()
     {
-        
+        totalElapsedTime += Time.deltaTime;
+        GameManager.Instance.tiempoRecord += Time.deltaTime;
+        Debug.Log("Tiempo transcurrido: " + (totalElapsedTime-9));
         if (ganar)
         {
             
             audioSource.volume -= 0.0005f;
-            Debug.Log("Volumen: "+audioSource.volume);
+            //Debug.Log("Volumen: "+audioSource.volume);
             elapsedTime += Time.deltaTime;
-         
+            Debug.Log("Elapsed Time: " + elapsedTime);
+            
             if (elapsedTime >= 3)
             {
-                Debug.Log("pasaron 3");
+                //Debug.Log("pasaron 3");
                 SceneManager.LoadScene(2);
 
             }
@@ -69,9 +74,10 @@ public class Jugador : MonoBehaviour
         if (reinicio)
         {
             OnLivesChanged.Invoke(perfilJugador.vida);
+            SceneManager.LoadScene(0);
             reinicio = false;
         }
-        OnTextChanged.Invoke(perfilJugador.currentLevel.ToString());
+        OnTextChanged.Invoke("Nivel " + perfilJugador.currentLevel.ToString());
     }
    
     public void  ModificarVida(int puntos)
@@ -81,8 +87,7 @@ public class Jugador : MonoBehaviour
         {
             perfilJugador.vida += puntos;
             
-            //Debug.Log(" VIDA RESTANTE:  " + perfilJugador.vida);
-            GameManager.Instance.getPlayerLives(perfilJugador.vida);
+        
         }
         OnLivesChanged.Invoke(perfilJugador.vida);
 

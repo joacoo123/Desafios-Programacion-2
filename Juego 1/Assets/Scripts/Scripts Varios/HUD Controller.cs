@@ -5,7 +5,8 @@ using TMPro;
 
 public class HUDController : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI miTexto;
+    [SerializeField] TextMeshProUGUI miTexto1;
+    [SerializeField] TextMeshProUGUI miTexto2;
 
     [SerializeField] GameObject iconoVida;
     [SerializeField] GameObject contenedorIconosVida;
@@ -13,7 +14,12 @@ public class HUDController : MonoBehaviour
     public void ActualizarTextoHUD(string nuevoTexto)
     {
         
-        miTexto.text = "Nivel "+nuevoTexto;
+        miTexto1.text = nuevoTexto;
+    }
+
+    public void ActualizarTiempoHUD(string nuevoTiempo)
+    {
+        miTexto2.text = nuevoTiempo;
     }
 
     public void ActualizarVidasHUD(int vidas)
